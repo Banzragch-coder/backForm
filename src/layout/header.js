@@ -8,7 +8,7 @@ export default function Header() {
     <Header
       style={{ background: "#3d3c3a", color: "white", fontSize: "1.8rem" }}
     >
-      <div>SAIN INTERNATIONAL</div>
+      <div>Leasing.mn</div>
     </Header>
   );
 }

@@ -8,7 +8,6 @@ import FinanceInfo from "./financeInfo";
 import IncomeVerification from "./incomeVerification";
 import FamilyInfo from "./familyInfo";
 
-
 //-------------------------------------------------Hook----------------------------------------------------
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -42,6 +41,7 @@ export default function IndexForm() {
       title: "ХУВИЙН МЭДЭЭЛЭЛ",
       content: <PersonalInfo />,
       status: current == 0 ? "process" : "wait",
+      step: 0,
       // description: "Та өөрийн мэдээллээ үнэн зөв бөглөнө үү",
       step: 0,
     },
@@ -75,12 +75,41 @@ export default function IndexForm() {
     setCurrent(current);
   }
 
-
   const onFinish = (values) => {
     console.log("Success123:", values);
+
    // const obj = { 'овог': values.uragiinOvog, 'хот': values.city, };
-   axios.post("http://localhost:5001/create",values)
+   axios
+      .post(
+        "http://10.10.15.2:3001/create", {
+          PhoneNumber : values.PhoneNumber,
+          addressDate : values.addressDate,
+          addressDetail: values.addressDetail,
+          city : values.city,
+          district : values.district,
+          education : values.education,
+          familyFirstName_1 : values.familyFirstName_1,
+          familyLastName_1 : values.familyLastName_1,
+          familyPhoneNumber_1 : values.familyPhoneNumber_1,
+          familyType : values.familyType,
+          familyWhoName_1 : values.familyWhoName_1,
+          firstName : values.firstName,
+          gender : values.gender,
+          khoroo : values.khoroo,
+          lastName : values.lastName,
+          monthExpense : values.monthExpense,
+          monthIncome : values.monthIncome,
+          ownerType : values.ownerType,
+          rd1 : values.rd1,
+          rd2 : values.rd2,
+          registerNumber : values.registerNumber,
+          uragiinOvog : values.uragiinOvog
+        }
+      )
       .then((response) => {
+        
+        // Result.icon(<SmileOutlined />);
+        // Result.title=("Great, we have done all the operations!");
         console.log("res:", response);
         message.success("Амжилттай хадгалагдлаа");
         form.resetFields();
