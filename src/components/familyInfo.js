@@ -40,6 +40,8 @@ export default function FamilyInfo() {
               <Option value="sister">Эгч</Option>
               <Option value="grandma">Эмээ</Option>
               <Option value="grandfa">Өвөө</Option>
+              <Option value="grandfa">Хүргэн</Option>
+              <Option value="grandfa">Бэр</Option>
               <Option value="wife">Эхнэр</Option>
               <Option value="husband">Нөхөр</Option>
               <Option value="son">Хүү</Option>
@@ -55,19 +57,151 @@ export default function FamilyInfo() {
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
            <InputNumber  
+               placeholder="88123456"
                style={{ width: 150 }}
-               defaultValue={88112233}
-               min={10000000}
-               max={99999999}
+              //  formatter={value => ` ${value}`.replace(/\B(?=(\d{2})+(?!\d))/g, "'")}
+          />
+          </Form.Item>
+        </Panel>
+         <Panel header="Гэр бүлийн гишүүн 2" key="2">
+          <Form.Item 
+          //  style={{ marginLeft: "110px", margin:"40px"}}
+            label="Овог"
+            name="familyLastName_2"
+            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Нэр"
+            name="familyFirstName_2"
+            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Таны хэн болох"
+            name="familyWhoName_2"
+            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+          >
+            <Select defaultValue="Сонгох">
+              <Option value="mother">Ээж</Option>
+              <Option value="father">Аав</Option>
+              <Option value="brother">Ах</Option>
+              <Option value="sister">Эгч</Option>
+              <Option value="grandma">Эмээ</Option>
+              <Option value="grandfa">Өвөө</Option>
+              <Option value="wife">Эхнэр</Option>
+              <Option value="husband">Нөхөр</Option>
+              <Option value="son">Хүү</Option>
+              <Option value="girl">Охин</Option>
+              <Option value="youngerbro">Дүү Эрэгтэй</Option>
+              <Option value="youngersis">Дүү Эмэгтэй</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item
+            style={{ display: "flex", justifyContent: "flex-end"  }}
+            label="Утасны дугаар  "
+            name="familyPhoneNumber_2"
+            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+          >
+           <InputNumber  
+               style={{ width: 150 }}
+               placeholder="88123456"
+       />
+          </Form.Item>
+        </Panel>
+         <Panel header="Гэр бүлийн гишүүн 3" key="3">
+          <Form.Item 
+          //  style={{ marginLeft: "110px", margin:"40px"}}
+            label="Овог"
+            name="familyLastName_3"
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Нэр"
+            name="familyFirstName_3"
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Таны хэн болох"
+            name="familyWhoName_3"
+            
+          >
+            <Select defaultValue="Сонгох">
+              <Option value="mother">Ээж</Option>
+              <Option value="father">Аав</Option>
+              <Option value="brother">Ах</Option>
+              <Option value="sister">Эгч</Option>
+              <Option value="grandma">Эмээ</Option>
+              <Option value="grandfa">Өвөө</Option>
+              <Option value="wife">Эхнэр</Option>
+              <Option value="husband">Нөхөр</Option>
+              <Option value="son">Хүү</Option>
+              <Option value="girl">Охин</Option>
+              <Option value="youngerbro">Дүү Эрэгтэй</Option>
+              <Option value="youngersis">Дүү Эмэгтэй</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item
+            style={{ display: "flex", justifyContent: "flex-end"  }}
+            label="Утасны дугаар  "
+            name="familyPhoneNumber_3"
+          >
+           <InputNumber  
+               style={{ width: 150 }}
+               placeholder="88123456"
               //  formatter={value => ` ${value}`.replace(/\B(?=(\d{2})+(?!\d))/g, "'")}
        />
           </Form.Item>
         </Panel>
-        <Panel header="Гэр бүлийн гишүүн 2" key="2">
-          <p>Test</p>
+         <Panel header="Гэр бүлийн гишүүн 4" key="4">
+          <Form.Item 
+          //  style={{ marginLeft: "110px", margin:"40px"}}
+            label="Овог"
+            name="familyLastName_4"
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Нэр"
+            name="familyFirstName_4"
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Таны хэн болох"
+            name="familyWhoName_4"
+          >
+            <Select defaultValue="Сонгох">
+              <Option value="mother">Ээж</Option>
+              <Option value="father">Аав</Option>
+              <Option value="brother">Ах</Option>
+              <Option value="sister">Эгч</Option>
+              <Option value="grandma">Эмээ</Option>
+              <Option value="grandfa">Өвөө</Option>
+              <Option value="wife">Эхнэр</Option>
+              <Option value="husband">Нөхөр</Option>
+              <Option value="son">Хүү</Option>
+              <Option value="girl">Охин</Option>
+              <Option value="youngerbro">Дүү Эрэгтэй</Option>
+              <Option value="youngersis">Дүү Эмэгтэй</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item
+            style={{ display: "flex", justifyContent: "flex-end"  }}
+            label="Утасны дугаар  "
+            name="familyPhoneNumber_4"
+          >
+           <InputNumber  
+               style={{ width: 150 }}
+               placeholder="88123456"
+       />
+          </Form.Item>
         </Panel>
       </Collapse>
-      ,
     </>
   );
 }

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Steps, Form, Button, Row, Col, message } from "antd";
 import "../../src/App.css";
 import axios from "axios";
-import PersonalInfo from "./personalInfo";
-import AddressInfo from "./addressInfo";
-import FinanceInfo from "./financeInfo";
-import IncomeVerification from "./incomeVerification";
+import UserInfo from "./userInfo";
+import ContactInfo from "./contactInfo";
+import EducationInfo from "./educationInfo";
+import WorkInfo from "./workInfo";
 import FamilyInfo from "./familyInfo";
+import ThanksInfo from "./thanksInfo";
 
 //-------------------------------------------------Hook----------------------------------------------------
 function useWindowSize() {
@@ -37,35 +38,46 @@ export default function IndexForm() {
   const [form] = Form.useForm();
   const layout = { labelCol: { span: 26 } , wrapperCol: { span: 26 }, };
   const steps = [
-    {
+    { 
       title: "ХУВИЙН МЭДЭЭЛЭЛ",
-      content: <PersonalInfo />,
+      content: <UserInfo />,
       status: current == 0 ? "process" : "wait",
       step: 0,
-      // description: "Та өөрийн мэдээллээ үнэн зөв бөглөнө үү",
-      step: 0,
+      
     },
     {
-      title: "ОРШИН СУУГАА ХАЯГ",
-      content: <AddressInfo />,
+      title: "ХОЛБОО БАРИХ МЭДЭЭЛЭЛ",
+      content: <ContactInfo />,
       status: current == 1 ? "process" : "wait",
-      // description: "Одоо оршин сууж байгаа хаяг",
+      // description: "ХОЛБОО БАРИХ МЭДЭЭЛЭЛ хаяг",
       step: 1,
     },
     {
-      title: "ОРЛОГЫН МЭДЭЭЛЭЛ",
-      content: <FinanceInfo />,
+      title: "БОЛОВСРОЛЫН МЭДЭЭЛЭЛ",
+      content: <EducationInfo />,
       status: current == 2 ? "process" : "wait",
       // description: "30 хоног тутамд орж ирдэг орлого",
       step: 2,
     },
     {
-      title: "ГЭР БҮЛИЙН МЭДЭЭЛЭЛ",
-      content: <FamilyInfo />,
+      title: "АЖИЛ ЭРХЛЭЛТИЙН МЭДЭЭЛЭЛ",
+      content: <WorkInfo />,
       status: current == 3 ? "process" : "wait",
-      // description: "Яаралтай үед холбоо барих хүмүүсийн мэдээлэл",
       step: 3,
     },
+    { 
+      title: "ГЭР БҮЛИЙН МЭДЭЭЛЭЛ",
+      content: <FamilyInfo />,
+      status: current == 4 ? "process" : "wait",
+      step: 4,
+    },
+    { 
+      title: "",
+      content: <ThanksInfo />,
+      status: current == 5 ? "process" : "wait",
+      step: 5,
+    },
+  
     // {title: "ОРЛОГО НОТЛОХ ТӨРӨЛ",content: <IncomeVerification />,status: current == 4 ? "process" : "wait",description: "E-Mongolia -р баталгаажуулах боломжтой",step: 4, },
   ];
  
@@ -77,43 +89,21 @@ export default function IndexForm() {
 
   const onFinish = (values) => {
     console.log("Success123:", values);
+    setCurrent(current + 1);
 
    // const obj = { 'овог': values.uragiinOvog, 'хот': values.city, };
-   axios
-      .post(
-        "http://10.10.15.2:3001/create", {
-          PhoneNumber : values.PhoneNumber,
-          addressDate : values.addressDate,
-          addressDetail: values.addressDetail,
-          city : values.city,
-          district : values.district,
-          education : values.education,
-          familyFirstName_1 : values.familyFirstName_1,
-          familyLastName_1 : values.familyLastName_1,
-          familyPhoneNumber_1 : values.familyPhoneNumber_1,
-          familyType : values.familyType,
-          familyWhoName_1 : values.familyWhoName_1,
-          firstName : values.firstName,
-          gender : values.gender,
-          khoroo : values.khoroo,
-          lastName : values.lastName,
-          monthExpense : values.monthExpense,
-          monthIncome : values.monthIncome,
-          ownerType : values.ownerType,
-          rd1 : values.rd1,
-          rd2 : values.rd2,
-          registerNumber : values.registerNumber,
-          uragiinOvog : values.uragiinOvog
-        }
-      )
-      .then((response) => {
-        
-        // Result.icon(<SmileOutlined />);
-        // Result.title=("Great, we have done all the operations!");
+   axios.post(
+        "http://10.10.15.2:3001/create", values )
+        .then((response) =>
+        {
+          setCurrent(current + 1);
         console.log("res:", response);
         message.success("Амжилттай хадгалагдлаа");
         form.resetFields();
-      });
+        })
+        .catch(error => {
+          onFinishFailed()
+       });
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -129,7 +119,7 @@ export default function IndexForm() {
     setCurrent(current - 1);
   };
   useEffect(() => {  
-  }, []); // Empty array ensures that effect is only run on mount
+  }, []); 
   return (
     <div
         style={{
@@ -138,24 +128,21 @@ export default function IndexForm() {
         alignItems: "center",
       }}
     >
-      {/* <div>
-        {size.width}px / {size.height}px
-      </div> */}
-      <div className="cardStyle">
+      <div className="cardStyleStep">
         <Steps
           direction= {size.width > 640 ? "horizontal" : "vertical"} 
           className="step"
           size="small"
-          current={1}
+          current={'10'}
           onChange={onChange}
           status="stepStatus"
-          // mode="horizontal"
-          // type="navigation"
+          mode="horizontal"
+          
         >
           {steps.map((item) => (
             <Step
               key={item.title}
-              title={item.title}
+               title={item.title}
               status={item.status}
               description={item.description}
               content={item.content}
@@ -167,7 +154,10 @@ export default function IndexForm() {
         className="cardStyle"
         style={{ display: "flex", flexDirection: "column", width: "80%",  }}
       >
-        {steps[current].title}     
+          <div style={{color:"Black", textAlign: "center", padding: "20px",  margin: "0px 0px", fontWeight: "bold" }}>
+            {steps[current].title}
+          </div>
+
             <Form
               {...layout}
               initialValues={{ remember: true }}
@@ -178,31 +168,35 @@ export default function IndexForm() {
               <Row 
               justify="center"
               >
-                <Col xs={24} sm={22} md={20} lg={20} xl={10} xxl={8}>
+                <Col>
                   {steps.map((item) => (
                     <div style={{ display: item.step == current ? "block" : "none", }} >
                       {item.content}
                     </div>
                   ))}
-                  <Form.Item style={{display: "flex", justifyContent: "flex-end"}}   >
-                    {current > 0 && (
+                  <Form.Item  style={{display: "flex", justifyContent: "flex-end"}}   >
+                    {current <5 && current>0 && (
                       <Button 
-                        style={{ margin: "8px" , width: 200 }}
+                        shape="round"
+                        style={{ margin: "8px" , width: 210 }}
                         onClick={() => prev()}
                       > Өмнөх алхам руу буцах
                       </Button> )}
-                    {current < steps.length - 1 && (
+                    {current < steps.length - 2 && (
                       <Button 
-                      style={{ margin: "8px" , width: 200 }} 
-                      type="primary" onClick={() => next()}
+                        shape="round"
+                        style={{ margin: "8px" , width: 210 }} 
+                        type="primary" 
+                        onClick={() => next()}
                       > Үргэлжлүүлэх
                       </Button> )}
-                    {current === steps.length - 1 && (
+                    {current === steps.length - 2 && (
                       <Button
-                        style={{ margin: "8px", width: 200 }}
+                        shape="round"
+                        style={{ margin: "8px", width: 210 }}
                         type="primary"
                         htmlType="submit"
-                        // onClick={() => message.success("Processing complete!")}
+                        // onClick={() => onFinish()}
                       >Дуусгах
                       </Button>
                     )}
