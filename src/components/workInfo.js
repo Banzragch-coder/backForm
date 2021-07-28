@@ -1,62 +1,76 @@
-import React from "react";
-import { Form, Input, Select, InputNumber, DatePicker} from "antd";
+import React, { useEffect } from "react";
+import {
+  Form,
+  Input,
+  Select,
+  InputNumber,
+  DatePicker
+} from "antd";
+import styles from '../mystyle.module.css'; 
 const { Option } = Select;
-
 export default function WorkInfo() {
   return (
     <>
           
       <Form.Item
+        className={styles.form}
         label="Албан байгууллага"
         name="organization"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <Input />
+        <Input 
+        className={styles.input}/>
       </Form.Item>
       <Form.Item
+        className={styles.form}
         label="Газар хэлтэс"
         name="heltes"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <Input />
+        <Input className={styles.input} />
       </Form.Item>
       <Form.Item
+        className={styles.form}
         label="Албан тушаал"
         name="alba"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <Input />
+        <Input className={styles.input}/>
       </Form.Item>
       <Form.Item
+        className={styles.form}
         label="Ажлын хаяг"
         name="workAddress"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <Input />
+        <Input className={styles.input} />
       </Form.Item>
-      <Form.Item
-            style={{ display: "flex", justifyContent: "flex-end"  }}
-            label="Удирдах ажилтны утас"
-            name="workPhoneNumber"
-            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+      <Form.Item    
+        className={styles.form}      
+        style={{ display: "flex", justifyContent: "flex-end"  }}
+        label="Удирдах ажилтны утас"
+        name="workPhoneNumber"
+        rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
           <InputNumber  
-               placeholder="88123456"
-               style={{ width: 150 , margin: "20px 0px", marginTop: "3px"}}
+            className={styles.input}
+            placeholder="88123456"
           />
       </Form.Item>
       <Form.Item
+        className={styles.form}
         label="Орсон он-сар"
         name="workIn"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <DatePicker />
+        <DatePicker className={styles.input} />
       </Form.Item>
       <Form.Item
+        className={styles.form}
         label="Гарсан он-сар"
         name="workEnd"
       >
-        <DatePicker />
+        <DatePicker className={styles.input}/>
       </Form.Item>
     </>
   );

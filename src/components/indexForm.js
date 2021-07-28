@@ -8,6 +8,7 @@ import EducationInfo from "./educationInfo";
 import WorkInfo from "./workInfo";
 import FamilyInfo from "./familyInfo";
 import ThanksInfo from "./thanksInfo";
+import styles from '../mystyle.module.css'; 
 
 export default function IndexForm() {
   const { Step } = Steps;
@@ -141,9 +142,12 @@ export default function IndexForm() {
                       {item.content}
                     </div>
                   ))}
-                  <Form.Item style={{display: "flex", justifyContent: "flex-end"}}   >
+                  <Form.Item 
+                  className={styles.but}
+                  >
                     {current <5 && current>0 && (
-                      <Button 
+                      <Button  
+                        
                         shape="round"
                         style={{ margin: "8px" , width: 210 }}
                         onClick={() => prev()}

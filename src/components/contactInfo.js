@@ -5,63 +5,68 @@ import {
   Select ,
   InputNumber
 } from "antd";
+import styles from '../mystyle.module.css'; 
 const { Option } = Select;
 const { TextArea } = Input;
 
 export default function ContactInfo() {
   return (
     <>
-      <Input.Group
-        >
- 
+    {/* INPUT Group hasaw */}
       <Form.Item
+        className={styles.form}
         label="Facebook хаяг"
         name="fb"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <Input />
+        <Input className={styles.input} />
       </Form.Item>
       <Form.Item
+          className={styles.form}
           label="Email хаяг"
           name="email"
           rules={[
-            // {required: true,message: "Талбарын утга хоосон байна.!", },
+            {required: true,message: "Талбарын утга хоосон байна.!", },
             {type: "email",message: "email хаягаа бичнэ үү", },
             ]}
             // rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
             >
-          <Input />
+          <Input className={styles.input} />
        </Form.Item>
        <Form.Item
+        className={styles.form}
         label="Одоо амьдарч байгаа хаяг"
         name="addressNow"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
         <TextArea
+          className={styles.input}
           autoSize={{ minRows: 3, maxRows: 5 }}
         />
       </Form.Item>
       <Form.Item
+        className={styles.form}
         label="Албан ёсны бүртгэлтэй хаяг"
         name="addressReal"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
         <TextArea
+          className={styles.input}
           autoSize={{ minRows: 3, maxRows: 5 }}
         />
       </Form.Item>
       <Form.Item
-            style={{ display: "flex", justifyContent: "flex-end"  }}
-            label="Утасны дугаар  "
-            name="phoneNumber"
-            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+        className={styles.form}
+        style={{ display: "flex", justifyContent: "flex-end"  }}
+        label="Утасны дугаар  "
+        name="phoneNumber"
+        rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-          <InputNumber  
-               style={{ width: 150 }}
-              //placeholder="88123456"
+        <InputNumber  
+          className={styles.input}
+          placeholder="88123456"
           />
       </Form.Item>
-      </Input.Group>
     </>
   );
 }

@@ -6,15 +6,23 @@ import "antd/dist/antd.css";
 import Header from "./layout/header";
 import Content from "./layout/content";
 import Footer from "./layout/footer";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 function App() {
   return (
-    <Layout className="layout" style={{ minHeight: "100vh", fontSize: "10rem" }}>
+    <Router>
+      {/* <Footer /> */}
+    <Route path="/anket">
+    <Layout className="layout" style={{ minHeight: "100vh" }}>
       {/* #0000FF  background:"#FFD700"   color: "white", fontSize: "1.5rem", font: "bold"*/}
       <Header />
       <Content />
       <Footer />
     </Layout>
+    </Route>
+    </Router>
+
+    
   );
 }
 

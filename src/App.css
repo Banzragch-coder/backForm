@@ -29,7 +29,7 @@
   width: 100%;
 
 }
- .p {
+ .p{
    color: "red";
 }
 
@@ -69,6 +69,7 @@
   }
 }
 
-/* .p {
-  text-align: center;
-} */
+.ant-input-affix-wrapper {
+  border:5px;
+  color: aqua;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import { Form, Input, Select, InputNumber, Collapse } from "antd";
+
+import styles from '../mystyle.module.css'; 
 const { Option } = Select;
 export default function FamilyInfo() {
   const { Panel } = Collapse;
@@ -14,25 +16,28 @@ export default function FamilyInfo() {
       defaultActiveKey={["1"]} onChange={callback}>
         <Panel header="Гэр бүлийн гишүүн 1" key="1">
           <Form.Item 
+            className={styles.form}
             label="Овог"
             name="familyLastName_1"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Нэр"
             name="familyFirstName_1"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Таны хэн болох"
             name="familyWhoName_1"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Select defaultValue="Сонгох">
+            <Select style={{width:"230px" , textAlign:"start"}} defaultValue="Сонгох">
               <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
@@ -50,14 +55,15 @@ export default function FamilyInfo() {
             </Select>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             style={{ display: "flex", justifyContent: "flex-end"  }}
             label="Утасны дугаар  "
             name="familyPhoneNumber_1"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
            <InputNumber  
-               placeholder="88123456"
-               style={{ width: 150 }}
+             className={styles.input}
+             placeholder="88123456"
           />
           </Form.Item>
           <div style={{color:"red", textAlign: "center", padding: "20px", fontSize:"12px"  }}>
@@ -66,25 +72,28 @@ export default function FamilyInfo() {
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 2" key="2">
           <Form.Item 
+            className={styles.form}
             label="Овог"
             name="familyLastName_2"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Нэр"
             name="familyFirstName_2"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Таны хэн болох"
             name="familyWhoName_2"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Select defaultValue="Сонгох">
+            <Select style={{width:"230px", textAlign:"start"}}defaultValue="Сонгох">
               <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
@@ -100,36 +109,38 @@ export default function FamilyInfo() {
             </Select>
           </Form.Item>
           <Form.Item
-            style={{ display: "flex", justifyContent: "flex-end"  }}
+            className={styles.form}
             label="Утасны дугаар  "
             name="familyPhoneNumber_2"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-           <InputNumber  
-               style={{ width: 150 }}
-               placeholder="88123456"
+           <InputNumber
+             className={styles.input}  
+             placeholder="88123456"
        />
           </Form.Item>
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 3" key="3">
           <Form.Item 
+            className={styles.form}
             label="Овог"
             name="familyLastName_3"
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Нэр"
             name="familyFirstName_3"
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Таны хэн болох"
             name="familyWhoName_3"
-            
           >
-            <Select defaultValue="Сонгох">
+            <Select style={{width:"230px", textAlign:"start"}}defaultValue="Сонгох">
               <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
@@ -145,34 +156,38 @@ export default function FamilyInfo() {
             </Select>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             style={{ display: "flex", justifyContent: "flex-end"  }}
             label="Утасны дугаар  "
             name="familyPhoneNumber_3"
           >
            <InputNumber  
-               style={{ width: 150 }}
-               placeholder="88123456"
+             placeholder="88123456"
+             className={styles.input}
        />
           </Form.Item>
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 4" key="4">
           <Form.Item 
+            className={styles.form}
             label="Овог"
             name="familyLastName_4"
           >
-            <Input />
+            <Input className={styles.input} />
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Нэр"
             name="familyFirstName_4"
           >
-            <Input />
+            <Input className={styles.input}/>
           </Form.Item>
           <Form.Item
+            className={styles.form}
             label="Таны хэн болох"
             name="familyWhoName_4"
           >
-            <Select defaultValue="Сонгох">
+            <Select style={{width:"230px", textAlign:"start"}} defaultValue="Сонгох">
               <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
@@ -188,13 +203,13 @@ export default function FamilyInfo() {
             </Select>
           </Form.Item>
           <Form.Item
-            style={{ display: "flex", justifyContent: "flex-end"  }}
+            className={styles.form}
             label="Утасны дугаар  "
             name="familyPhoneNumber_4"
           >
            <InputNumber  
-               style={{ width: 150 }}
-               placeholder="88123456"
+             className={styles.input}
+             placeholder="88123456"
        />
           </Form.Item>
         </Panel>
