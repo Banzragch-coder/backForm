@@ -16,6 +16,7 @@
   box-shadow: rgb(0 0 0 / 8%) 0px 0.5px 8px 0px;
   background-color: rgb(255, 255, 255);
   width: 100%;
+
 }
 .cardStyleStep {
   padding: 15px;
@@ -26,6 +27,10 @@
   box-shadow: rgb(0 0 0 / 8%) 0px 0.5px 8px 0px;
   background-color: rgb(255, 255, 255);
   width: 100%;
+
+}
+ .p {
+   color: "red";
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -64,6 +69,6 @@
   }
 }
 
-.p {
+/* .p {
   text-align: center;
-}
+} */

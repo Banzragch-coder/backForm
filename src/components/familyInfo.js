@@ -8,13 +8,12 @@ export default function FamilyInfo() {
   }
   return (
     <>
+    
       <Collapse 
-      // span={24}
       style={{marginTop:"20px"}}
       defaultActiveKey={["1"]} onChange={callback}>
         <Panel header="Гэр бүлийн гишүүн 1" key="1">
           <Form.Item 
-          //  style={{ marginLeft: "110px", margin:"40px"}}
             label="Овог"
             name="familyLastName_1"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
@@ -59,13 +58,14 @@ export default function FamilyInfo() {
            <InputNumber  
                placeholder="88123456"
                style={{ width: 150 }}
-              //  formatter={value => ` ${value}`.replace(/\B(?=(\d{2})+(?!\d))/g, "'")}
           />
           </Form.Item>
+          <div style={{color:"red", textAlign: "center", padding: "20px", fontSize:"12px"  }}>
+      2-c дээш гэр бүлийн гишүүний мэдээлэл бөглөх шаардлагатайг анхаарна уу!
+    </div>
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 2" key="2">
           <Form.Item 
-          //  style={{ marginLeft: "110px", margin:"40px"}}
             label="Овог"
             name="familyLastName_2"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
@@ -113,7 +113,6 @@ export default function FamilyInfo() {
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 3" key="3">
           <Form.Item 
-          //  style={{ marginLeft: "110px", margin:"40px"}}
             label="Овог"
             name="familyLastName_3"
           >
@@ -153,13 +152,11 @@ export default function FamilyInfo() {
            <InputNumber  
                style={{ width: 150 }}
                placeholder="88123456"
-              //  formatter={value => ` ${value}`.replace(/\B(?=(\d{2})+(?!\d))/g, "'")}
        />
           </Form.Item>
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 4" key="4">
           <Form.Item 
-          //  style={{ marginLeft: "110px", margin:"40px"}}
             label="Овог"
             name="familyLastName_4"
           >

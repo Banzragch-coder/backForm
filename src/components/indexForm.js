@@ -9,29 +9,6 @@ import WorkInfo from "./workInfo";
 import FamilyInfo from "./familyInfo";
 import ThanksInfo from "./thanksInfo";
 
-//-------------------------------------------------Hook----------------------------------------------------
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount
-  return windowSize;
-}
-
-//-------------------------------------------------------------------------------------------------------------
-
 export default function IndexForm() {
   const { Step } = Steps;
   const [current, setCurrent] = useState(0);
@@ -49,14 +26,12 @@ export default function IndexForm() {
       title: "ХОЛБОО БАРИХ МЭДЭЭЛЭЛ",
       content: <ContactInfo />,
       status: current == 1 ? "process" : "wait",
-      // description: "ХОЛБОО БАРИХ МЭДЭЭЛЭЛ хаяг",
       step: 1,
     },
     {
       title: "БОЛОВСРОЛЫН МЭДЭЭЛЭЛ",
       content: <EducationInfo />,
       status: current == 2 ? "process" : "wait",
-      // description: "30 хоног тутамд орж ирдэг орлого",
       step: 2,
     },
     {
@@ -81,17 +56,10 @@ export default function IndexForm() {
     // {title: "ОРЛОГО НОТЛОХ ТӨРӨЛ",content: <IncomeVerification />,status: current == 4 ? "process" : "wait",description: "E-Mongolia -р баталгаажуулах боломжтой",step: 4, },
   ];
  
-  const size = useWindowSize();
-  function onChange(current) {
-    console.log("onChange:", current);
-    setCurrent(current);
-  }
-
   const onFinish = (values) => {
     console.log("Success123:", values);
     setCurrent(current + 1);
 
-   // const obj = { 'овог': values.uragiinOvog, 'хот': values.city, };
    axios.post(
         "http://10.10.15.2:3001/create", values )
         .then((response) =>
@@ -128,21 +96,20 @@ export default function IndexForm() {
         alignItems: "center",
       }}
     >
-      <div className="cardStyleStep">
+      <div className="cardStyleStep"  >
         <Steps
-          direction= {size.width > 640 ? "horizontal" : "vertical"} 
           className="step"
           size="small"
-          current={'10'}
-          onChange={onChange}
           status="stepStatus"
           mode="horizontal"
+
+          
           
         >
           {steps.map((item) => (
             <Step
               key={item.title}
-               title={item.title}
+              // title={item.title}
               status={item.status}
               description={item.description}
               content={item.content}
@@ -174,7 +141,7 @@ export default function IndexForm() {
                       {item.content}
                     </div>
                   ))}
-                  <Form.Item  style={{display: "flex", justifyContent: "flex-end"}}   >
+                  <Form.Item style={{display: "flex", justifyContent: "flex-end"}}   >
                     {current <5 && current>0 && (
                       <Button 
                         shape="round"

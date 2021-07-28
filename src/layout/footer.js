@@ -12,7 +12,7 @@ function footer() {
         color: "white",
       }}
     >
-      {"©2020 Created by Banzrach.Ch"}
+      {"©2020 "}
     </Footer>
   );
 }

@@ -49,7 +49,6 @@ export default function UserInfo(props) {
         style={{ display: "flex", justifyContent: "flex-end"}}
       >
           <Form.Item
-                // style={{marginRight:"20px"}}
                 name="rd1"
                 rules={[{required: true,message: "Заавал бөглөнө үү",},]}
               >
@@ -134,7 +133,6 @@ export default function UserInfo(props) {
           </Select>
         </Form.Item>
         <Form.Item
-          // style={{ marginRight: "10px" }}
           name="registerNumber"
           rules={[
             {required: true,message: "Заавал бөглөнө үү",}]}
@@ -161,7 +159,7 @@ export default function UserInfo(props) {
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
         <Select defaultValue="Сонгох">
-          <Option value="married">Гэрэлсэн</Option>
+          <Option value="married">Гэрлэсэн</Option>
           <Option value="single">Гэрлээгүй</Option>
         </Select>
       </Form.Item>

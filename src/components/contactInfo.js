@@ -25,8 +25,8 @@ export default function ContactInfo() {
           label="Email хаяг"
           name="email"
           rules={[
-            {required: true,message: "Талбарын утга хоосон байна.!", },
-            {type: "",message: "email хаягаа бичнэ үү", },
+            // {required: true,message: "Талбарын утга хоосон байна.!", },
+            {type: "email",message: "email хаягаа бичнэ үү", },
             ]}
             // rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
             >

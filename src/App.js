@@ -9,7 +9,7 @@ import Footer from "./layout/footer";
 
 function App() {
   return (
-    <Layout className="layout" style={{ minHeight: "100vh" }}>
+    <Layout className="layout" style={{ minHeight: "100vh", fontSize: "10rem" }}>
       {/* #0000FF  background:"#FFD700"   color: "white", fontSize: "1.5rem", font: "bold"*/}
       <Header />
       <Content />

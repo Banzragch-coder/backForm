@@ -1,0 +1,16 @@
+@media screen and (min-width: 1000px) {
+    .bigblue {
+      text-align: center;
+    }
+  }
+.bigblue {
+    justify-content: center;
+
+}
+ /* {
+    color: red;
+  }
+  */
+ 
+ 
+ 
