@@ -55,7 +55,7 @@ export default function UserInfo(props) {
               name="rd1"
               rules={[{required: true,message: "Заавал бөглөнө үү",},]}  
               placeholder="А-Я" 
-              style={{width:"70px", borderRadius:"10px"}}>
+              style={{width:"70px" }}>
             <Option value="А">А</Option>
             <Option value="Б">Б</Option>
             <Option value="В">В</Option>
