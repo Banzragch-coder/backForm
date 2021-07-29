@@ -54,7 +54,6 @@ export default function WorkInfo() {
           >
           <InputNumber  
             className={styles.input}
-            placeholder="88123456"
           />
       </Form.Item>
       <Form.Item
@@ -63,14 +62,14 @@ export default function WorkInfo() {
         name="workIn"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <DatePicker className={styles.input} />
+        <DatePicker placeholder="" className={styles.input} />
       </Form.Item>
       <Form.Item
         className={styles.form}
         label="Гарсан он-сар"
         name="workEnd"
       >
-        <DatePicker className={styles.input}/>
+        <DatePicker  placeholder=""className={styles.input}/>
       </Form.Item>
     </>
   );

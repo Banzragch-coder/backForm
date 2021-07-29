@@ -1,10 +1,6 @@
+@border-radius-base: "20px";
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .cardStyle {
@@ -26,24 +22,16 @@
   border-radius: 6px;
   box-shadow: rgb(0 0 0 / 8%) 0px 0.5px 8px 0px;
   background-color: rgb(255, 255, 255);
-  width: 100%;
+  width: 100%
+}
+.ant-input {
+  border-radius: 25px;
+}
+.ant-input-number-handler-wrap {
+  visibility: hidden !important;
+}
 
-}
- .p{
-   color: "red";
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-  
-@media screen and (max-width: 640px) {
-  .step {
-    /* background-color: #61dafb; */
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -58,18 +46,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.ant-input-affix-wrapper {
-  border:5px;
-  color: aqua;
 }

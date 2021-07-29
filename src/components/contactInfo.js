@@ -64,7 +64,6 @@ export default function ContactInfo() {
           >
         <InputNumber  
           className={styles.input}
-          placeholder="88123456"
           />
       </Form.Item>
     </>

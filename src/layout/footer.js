@@ -12,7 +12,7 @@ function footer() {
         color: "white",
       }}
     >
-      {"©2020 "}
+      {"©2021 SAIN INTERNATIONAL "}
     </Footer>
   );
 }

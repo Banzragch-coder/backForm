@@ -103,9 +103,6 @@ export default function IndexForm() {
           size="small"
           status="stepStatus"
           mode="horizontal"
-
-          
-          
         >
           {steps.map((item) => (
             <Step
@@ -147,15 +144,12 @@ export default function IndexForm() {
                   >
                     {current <5 && current>0 && (
                       <Button  
-                        
-                        shape="round"
                         style={{ margin: "8px" , width: 210 }}
                         onClick={() => prev()}
                       > Өмнөх алхам руу буцах
                       </Button> )}
                     {current < steps.length - 2 && (
                       <Button 
-                        shape="round"
                         style={{ margin: "8px" , width: 210 }} 
                         type="primary" 
                         onClick={() => next()}
@@ -163,7 +157,6 @@ export default function IndexForm() {
                       </Button> )}
                     {current === steps.length - 2 && (
                       <Button
-                        shape="round"
                         style={{ margin: "8px", width: 210 }}
                         type="primary"
                         htmlType="submit"

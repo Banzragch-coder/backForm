@@ -47,7 +47,7 @@ export default function EducationInfo() {
         name="schoolIn"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <DatePicker className={styles.input}/>
+        <DatePicker placeholder="" className={styles.input}/>
       </Form.Item>
       <Form.Item
         className={styles.form}
@@ -55,7 +55,7 @@ export default function EducationInfo() {
         name="schoolEnd"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <DatePicker className={styles.input}/>
+        <DatePicker placeholder="" className={styles.input}/>
       </Form.Item>
     </>
   );

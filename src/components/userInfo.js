@@ -147,7 +147,7 @@ export default function UserInfo(props) {
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
         className={styles.form}
       >
-        <Select defaultValue="Сонгох" style={{width:"230px", justifyContent:"start"}}>
+        <Select defaultValue="Сонгох" style={{width:"230px", textAlign:"start"}}>
           <Option value="women">Эмэгтэй</Option>
           <Option value="men">Эрэгтэй</Option>
         </Select>

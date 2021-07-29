@@ -63,7 +63,6 @@ export default function FamilyInfo() {
           >
            <InputNumber  
              className={styles.input}
-             placeholder="88123456"
           />
           </Form.Item>
           <div style={{color:"red", textAlign: "center", padding: "20px", fontSize:"12px"  }}>
@@ -115,8 +114,7 @@ export default function FamilyInfo() {
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
            <InputNumber
-             className={styles.input}  
-             placeholder="88123456"
+             className={styles.input} 
        />
           </Form.Item>
         </Panel>
@@ -162,7 +160,6 @@ export default function FamilyInfo() {
             name="familyPhoneNumber_3"
           >
            <InputNumber  
-             placeholder="88123456"
              className={styles.input}
        />
           </Form.Item>
@@ -209,7 +206,6 @@ export default function FamilyInfo() {
           >
            <InputNumber  
              className={styles.input}
-             placeholder="88123456"
        />
           </Form.Item>
         </Panel>

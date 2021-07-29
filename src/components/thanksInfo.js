@@ -2,6 +2,7 @@ import { Result, Button } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 // import {dark} from '@ant-design/dark-theme';
 
+
 export default function ThanksInfo() {
   return (
     <>
