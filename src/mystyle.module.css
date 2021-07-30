@@ -5,16 +5,22 @@
   }
 
   .input {
-    /* border-radius: 20px; */
-    width: 230px;
+    width: 240px;
   }
   .form {
     justify-content: end;
     text-align: end;
   }
   .but {
-    /* background-color: aqua; */
     text-align: center;
   
   }
- 
+  .check {
+    /* width: 240px; */
+    justify-content: start ;
+    text-align: start;
+    /* text-align: center; */
+    /* background-color: aqua; */
+    margin:auto;
+
+ }

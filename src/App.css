@@ -24,9 +24,7 @@
   background-color: rgb(255, 255, 255);
   width: 100%
 }
-.ant-input {
-  border-radius: 25px;
-}
+
 .ant-input-number-handler-wrap {
   visibility: hidden !important;
 }

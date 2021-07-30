@@ -14,7 +14,7 @@ export default function EducationInfo() {
         name="educationDegree"
         rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
       >
-        <Select style={{ marginRigh: "auto" , width:"230px" , textAlign:"start"}}  defaultValue="Сонгох">
+        <Select style={{ marginRigh: "auto" , width:"240px" , textAlign:"start"}}  defaultValue="Сонгох">
           <Option value="bechelor">Бакалавр</Option>
           <Option value="master">Магистр</Option>
           <Option value="doctor">Доктор</Option>
