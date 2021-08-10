@@ -64,8 +64,8 @@ export default function FamilyInfo() {
               <Option value="sister">Эгч</Option>
               <Option value="grandma">Эмээ</Option>
               <Option value="grandfa">Өвөө</Option>
-              <Option value="grandfa">Хүргэн</Option>
-              <Option value="grandfa">Бэр</Option>
+              <Option value="hurgen">Хүргэн</Option>
+              <Option value="ber">Бэр</Option>
               <Option value="wife">Эхнэр</Option>
               <Option value="husband">Нөхөр</Option>
               <Option value="son">Хүү</Option>
@@ -79,9 +79,21 @@ export default function FamilyInfo() {
             style={{ display: "flex", justifyContent: "flex-end"  }}
             label="Утасны дугаар  "
             name="familyPhoneNumber_1"
-            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+            rules={[
+              {
+                  required: true,
+                  message: 'Заавал бөглөнө үү',
+              },{
+                  pattern: /^[8-9]{1,7}/,
+                  message: 'утасны дугаар буруу байна',
+              },
+              {
+                pattern: /^[\d]{0,8}$/,
+                message: "утасны дугаар 8 орон хэтэрсэн байнаа",
+              },
+          ]}
           >
-           <InputNumber  
+           <Input 
              className={styles.input}
           />
           </Form.Item>
@@ -89,7 +101,9 @@ export default function FamilyInfo() {
       2-c дээш гэр бүлийн гишүүний мэдээлэл бөглөх шаардлагатайг анхаарна уу!
     </div>
         </Panel>
-         <Panel header="Гэр бүлийн гишүүн 2" key="2">
+        <Panel 
+          rules={[{ required: true, message: "Заавал бөглөнө үү" }]} 
+          header="Гэр бүлийн гишүүн 2" key="2">
           <Form.Item 
             className={styles.form}
             label="Овог"
@@ -112,13 +126,15 @@ export default function FamilyInfo() {
             name="familyWhoName_2"
             rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
           >
-            <Select style={{width:"240px", textAlign:"start"}}defaultValue="Сонгох">
+            <Select style={{width:"240px" , textAlign:"start"}} defaultValue="Сонгох">
               <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
               <Option value="sister">Эгч</Option>
               <Option value="grandma">Эмээ</Option>
               <Option value="grandfa">Өвөө</Option>
+              <Option value="hurgen">Хүргэн</Option>
+              <Option value="ber">Бэр</Option>
               <Option value="wife">Эхнэр</Option>
               <Option value="husband">Нөхөр</Option>
               <Option value="son">Хүү</Option>
@@ -129,13 +145,26 @@ export default function FamilyInfo() {
           </Form.Item>
           <Form.Item
             className={styles.form}
+            style={{ display: "flex", justifyContent: "flex-end"  }}
             label="Утасны дугаар  "
             name="familyPhoneNumber_2"
-            rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+            rules={[
+              {
+                  required: true,
+                  message: 'Заавал бөглөнө үү',
+              },{
+                  pattern: /^[8-9]{1,7}/,
+                  message: 'утасны дугаар буруу байна',
+              },
+              {
+                pattern: /^[\d]{0,8}$/,
+                message: "утасны дугаар 8 орон хэтэрсэн байна",
+              },
+          ]}
           >
-           <InputNumber
-             className={styles.input} 
-       />
+           <Input  
+             className={styles.input}
+          />
           </Form.Item>
         </Panel>
          <Panel header="Гэр бүлийн гишүүн 3" key="3">
@@ -159,12 +188,14 @@ export default function FamilyInfo() {
             name="familyWhoName_3"
           >
             <Select style={{width:"240px", textAlign:"start"}}defaultValue="Сонгох">
-              <Option value="mother">Ээж</Option>
+            <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
               <Option value="sister">Эгч</Option>
               <Option value="grandma">Эмээ</Option>
               <Option value="grandfa">Өвөө</Option>
+              <Option value="hurgen">Хүргэн</Option>
+              <Option value="ber">Бэр</Option>
               <Option value="wife">Эхнэр</Option>
               <Option value="husband">Нөхөр</Option>
               <Option value="son">Хүү</Option>
@@ -178,8 +209,18 @@ export default function FamilyInfo() {
             style={{ display: "flex", justifyContent: "flex-end"  }}
             label="Утасны дугаар  "
             name="familyPhoneNumber_3"
+            rules={[
+              {
+                  pattern: /^[8-9]{1,7}/,
+                  message: 'утасны дугаар буруу байнаү',
+              },
+              {
+                pattern: /^[\d]{0,8}$/,
+                message: "утасны дугаар 8 орон хэтэрсэн байна",
+              },
+          ]}
           >
-           <InputNumber  
+           <Input
              className={styles.input}
        />
           </Form.Item>
@@ -205,12 +246,14 @@ export default function FamilyInfo() {
             name="familyWhoName_4"
           >
             <Select style={{width:"240px", textAlign:"start"}} defaultValue="Сонгох">
-              <Option value="mother">Ээж</Option>
+            <Option value="mother">Ээж</Option>
               <Option value="father">Аав</Option>
               <Option value="brother">Ах</Option>
               <Option value="sister">Эгч</Option>
               <Option value="grandma">Эмээ</Option>
               <Option value="grandfa">Өвөө</Option>
+              <Option value="hurgen">Хүргэн</Option>
+              <Option value="ber">Бэр</Option>
               <Option value="wife">Эхнэр</Option>
               <Option value="husband">Нөхөр</Option>
               <Option value="son">Хүү</Option>
@@ -223,8 +266,18 @@ export default function FamilyInfo() {
             className={styles.form}
             label="Утасны дугаар  "
             name="familyPhoneNumber_4"
+            rules={[
+              {
+                  pattern: /^[8-9]{1,7}/,
+                  message: 'утасны дугаар буруу байна',
+              },
+              {
+                pattern: /^[\d]{0,8}$/,
+                message: "утасны дугаар 8 орон хэтэрсэн байна",
+              },
+          ]}
           >
-           <InputNumber  
+           <Input 
              className={styles.input}
        />
           </Form.Item>
@@ -243,7 +296,7 @@ export default function FamilyInfo() {
         {...tailFormItemLayout}
       >
         <Checkbox className={styles.check} >
-        Зээлийн мэдээллийн сангаас миний мэдээллийг авахыг <a style={{color:"green"}}>зөвшөөрөв</a>
+        Зээлийн мэдээллийн сангаас миний мэдээллийг авахыг <a style={{color:"green"}}>зөвшөөрөв.</a>
         </Checkbox>
       </Form.Item>
           </Collapse>

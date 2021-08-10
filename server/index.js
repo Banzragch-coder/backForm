@@ -8,7 +8,7 @@ app.use(express.json());
 
 const db = mysql.createConnection({
     user: 'chinzorig',
-    host: '10.10.15.189',
+    host: '10.10.40.141',
     password: 'Sain1234',
     database: 'saindb'
 })
@@ -56,6 +56,7 @@ app.post("/create", (req, res) => {
     const familyLastName_4 = req.body.familyLastName_4;
     const familyFirstName_4 = req.body.familyFirstName_4;
     const familyPhoneNumber_4 = req.body.familyPhoneNumber_4;
+    const last_seen = req.body.last_seen;
 
     db.query(
       `INSERT INTO leasing (
@@ -100,8 +101,9 @@ app.post("/create", (req, res) => {
         familyLastName_4,
         familyFirstName_4,
         familyPhoneNumber_4,
-        schoolIn
-        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+        schoolIn,
+        last_seen
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)`,
       [ uragiinOvog,
         lastName,
         firstName,
@@ -143,7 +145,8 @@ app.post("/create", (req, res) => {
         familyLastName_4,
         familyFirstName_4,
         familyPhoneNumber_4,
-        schoolIn
+        schoolIn,
+        last_seen
         ],
       (err, result) => {
         if (err) {
