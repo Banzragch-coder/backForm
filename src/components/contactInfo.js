@@ -60,10 +60,23 @@ export default function ContactInfo() {
         style={{ display: "flex", justifyContent: "flex-end"  }}
         label="Утасны дугаар  "
         name="phoneNumber"
-        rules={[{ required: true, message: "Заавал бөглөнө үү" }]}
+        rules={[
+          {
+              required: true,
+              message: 'Заавал бөглөнө үү',
+          },{
+              pattern: /^[8-9]{1,7}/,
+              message: 'утасны дугаар буруу байна',
+          },
+          {
+            pattern: /^[\d]{0,8}$/,
+            message: "утасны дугаар 8 орон хэтэрсэн байна",
+          },
+      ]}
           >
-        <InputNumber  
+        <Input
           className={styles.input}
+
           />
       </Form.Item>
     </>

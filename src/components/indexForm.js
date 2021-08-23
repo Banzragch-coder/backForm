@@ -62,7 +62,7 @@ export default function IndexForm() {
     setCurrent(current + 1);
 
    axios.post(
-        "http://10.10.15.2:3001/create", values )
+        "http://10.10.40.141:3001/create", values )
         .then((response) =>
         {
           setCurrent(current + 1);
@@ -77,7 +77,7 @@ export default function IndexForm() {
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
-    message.success("Алдаа гарлаа");
+    message.success("Алдаа гарлаа аль нэг мэдээлэл бөглөгдөөгүй байна");
   };
 
   const next = () => {

@@ -145,12 +145,45 @@ export default function UserInfo(props) {
                     <Form.Item
                       name="registerNumber"
                       rules={[
-                        {required: true,message: "Заавал бөглөнө үү",}]}
+                        {
+                            required: true,
+                            message: 'Заавал бөглөнө үү',
+                        },
+                        // {
+                        //     pattern: /^[0-9]{1,7}/,
+                        //     message: '8 оронтой РД хийнэ үү',
+                        // },
+                        {
+                            pattern: /^[0-9]{2}[0-3]{1}[0-9]{1}[0-3]{1}[0-9]{3}/,
+                            message: 'РД буруу байна',
+                        },
+                        // {
+                        //     pattern: /^[0-9]{1,7}/,
+                        //     message: '8 оронтой РД хийнэ үү',
+                        // },
+                        {
+                          pattern: /^[\d]{0,8}$/,
+                          message: "РД 8 орон хэтэрсэн байна",
+                        },
+                    ]}
+                 
+
+                      // rules={[
+                      //   {
+                      //   required: true,
+                      //   type: "regexp",
+                      //   pattern: new RegExp("^[8-9]{8}$"),
+                      //   message: "8 оронтой РД хийнэ үү", }]}
+                        // formatter={value => ` ${value}`.replace(/^[8-9]{8,8}/g, )}
+                        
                     >
-            <InputNumber  
+            <Input
               style={{ width: 100 }}
+        
             />
           </Form.Item>
+          
+      
         </Input.Group>
       </Form.Item>
      
